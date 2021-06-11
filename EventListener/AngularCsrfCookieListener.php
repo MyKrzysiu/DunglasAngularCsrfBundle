@@ -12,7 +12,7 @@ namespace Dunglas\AngularCsrfBundle\EventListener;
 use Dunglas\AngularCsrfBundle\Csrf\AngularCsrfTokenManager;
 use Dunglas\AngularCsrfBundle\Routing\RouteMatcherInterface;
 use Symfony\Component\HttpFoundation\Cookie;
-use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
+use Symfony\Component\HttpKernel\Event\ResponseEvent
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 /**
@@ -86,7 +86,7 @@ class AngularCsrfCookieListener
      *
      * @param FilterResponseEvent $event
      */
-    public function onKernelResponse(FilterResponseEvent $event)
+    public function onKernelResponse(ResponseEvent $event)
     {
         if (
             HttpKernelInterface::MASTER_REQUEST !== $event->getRequestType()
