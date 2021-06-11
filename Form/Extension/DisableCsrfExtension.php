@@ -101,8 +101,8 @@ class DisableCsrfExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public static function getExtendedTypes()
+    public static function getExtendedTypes(): iterable
     {
-        return array('Symfony\Component\Form\Extension\Core\Type\FormType');
+        return ['Symfony\Component\Form\Extension\Core\Type\FormType'];
     }
 }
